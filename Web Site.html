@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pooja Children Park and Daycare - Nepal's Premier Children's Playground</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2821a9;
+            --secondary: #c11616;
+            --accent: #2821a9;
+            --light: #f9f9f9;
+            --dark: #333;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f8ff;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .hero {
+            background: url('/Users/prajwalpoudel/Desktop/DevOps(Masters Project)/IMG_1521.jpg') no-repeat center center/cover;
+            height: 70vh;
+            display: grid;
+            align-items: center;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.4);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #159557;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .packages {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+        
+        .package-card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+            text-align: left;
+        }
+        
+        .package-card li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .package-card li i {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+        
+        .highlight {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+        
+        .booking-form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .payment-options {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .payment-option {
+            flex: 1;
+            text-align: center;
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .payment-option.selected {
+            border-color: var(--primary);
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+        
+        .payment-option i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+        
+        .qr-code {
+            text-align: center;
+            margin: 1.5rem 0;
+            display: none;
+        }
+        
+        .qr-code img {
+            max-width: 200px;
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        
+        .card-payment {
+            display: none;
+        }
+        
+        .card-icons {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .card-icons i {
+            font-size: 2rem;
+            color: #555;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #444;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .packages {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .payment-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="None"></i>
+                    <h1>Pooja Children Park and Daycare</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#booking">Book Tickets</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Where Fun and Adventure Meet!</h2>
+                <p>Nepal's premier destination for children's entertainment. Safe, exciting, and unforgettable experiences for kids of all ages.</p>
+                <a href="#booking" class="btn">Book Tickets Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages">
+        <div class="container">
+            <h2 class="section-title">Play Time Packages</h2>
+            <div class="packages">
+                <div class="package-card">
+                    <h3>1 Hour Fun</h3>
+                    <div class="price">Rs 350</div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Access to all play areas</li>
+                        <li><i class="fas fa-check"></i> Supervised play</li>
+                        <li><i class="fas fa-check"></i> Basic safety gear</li>
+                        <li><i class="fas fa-check"></i> Free drinking water</li>
+                    </ul>
+                    <a href="#booking" class="btn">Select Package</a>
+                </div>
+                
+                <div class="package-card">
+                    <h3>2 Hours Adventure</h3>
+                    <div class="price">Rs 500</div>
+                    <span class="highlight">Most Popular</span>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Everything in 1 Hour package</li>
+                        <li><i class="fas fa-check"></i> One complimentary snack</li>
+                        <li><i class="fas fa-check"></i> Special activity session</li>
+                        <li><i class="fas fa-check"></i> Photo opportunity with mascot</li>
+                    </ul>
+                    <a href="#booking" class="btn">Select Package</a>
+                </div>
+                
+                <div class="package-card">
+                    <h3>Full Day Experience</h3>
+                    <div class="price">Rs 700</div>
+                    <span class="highlight">Best Value</span>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Everything in 2 Hours package</li>
+                        <li><i class="fas fa-check"></i> Lunch included</li>
+                        <li><i class="fas fa-check"></i> Arts & crafts session</li>
+                        <li><i class="fas fa-check"></i> Special souvenir</li>
+                        <li><i class="fas fa-check"></i> Priority access to attractions</li>
+                    </ul>
+                    <a href="#booking" class="btn">Select Package</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Tickets</h2>
+            <div class="booking-form">
+                <form id="ticketForm">
+                    <div class="form-group">
+                        <label for="package">Select Package</label>
+                        <select id="package" required>
+                            <option value="">Choose a package</option>
+                            <option value="350">1 Hour Fun - Rs 350</option>
+                            <option value="500">2 Hours Adventure - Rs 500</option>
+                            <option value="700">Full Day Experience - Rs 700</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="children">Number of Children</label>
+                        <input type="number" id="children" min="1" max="10" value="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Visit Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time">Preferred Time Slot</label>
+                        <select id="time" required>
+                            <option value="">Select time slot</option>
+                            <option value="9:00 AM">9:00 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="1:00 PM">1:00 PM</option>
+                            <option value="3:00 PM">3:00 PM</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="name">Parent/Guardian Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <h3>Payment Method</h3>
+                    <div class="payment-options">
+                        <div class="payment-option" id="qrOption">
+                            <i class="fas fa-qrcode"></i>
+                            <p>QR Payment</p>
+                        </div>
+                        <div class="payment-option" id="cardOption">
+                            <i class="far fa-credit-card"></i>
+                            <p>Card Payment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="qr-code" id="qrCode">
+                        <p>Scan this QR code to pay with your mobile banking app</p>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FunLandKidsPark-NPR-350" alt="QR Code for Payment">
+                        <p>After payment, you will receive confirmation via SMS/Email</p>
+                    </div>
+                    
+                    <div class="card-payment" id="cardPayment">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                            <div class="card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" style="display: flex; gap: 1rem;">
+                            <div style="flex: 1;">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" placeholder="MM/YY">
+                            </div>
+                            <div style="flex: 1;">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="123">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cardName">Name on Card</label>
+                            <input type="text" id="cardName">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="btn" style="width: 100%;">Complete Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Pooja Children Park and Daycare</h3>
+                    <p>Nepal's premier children's entertainment destination, offering safe and exciting play experiences for children of all ages.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Big Bazar, Narayanghat, Chitwan, Nepal</li>
+                        <li><i class="fas fa-phone"></i> +977 9855x xxxxx</li>
+                        <li><i class="fas fa-envelope"></i> Poojachildrenparkanddaycare.gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Open Daily: 8:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#booking">Book Tickets</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 FunLand Kids Park. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        
+        // Payment method selection
+        const qrOption = document.getElementById('qrOption');
+        const cardOption = document.getElementById('cardOption');
+        const qrCode = document.getElementById('qrCode');
+        const cardPayment = document.getElementById('cardPayment');
+        
+        qrOption.addEventListener('click', function() {
+            qrOption.classList.add('selected');
+            cardOption.classList.remove('selected');
+            qrCode.style.display = 'block';
+            cardPayment.style.display = 'none';
+        });
+        
+        cardOption.addEventListener('click', function() {
+            cardOption.classList.add('selected');
+            qrOption.classList.remove('selected');
+            cardPayment.style.display = 'block';
+            qrCode.style.display = 'none';
+        });
+        
+        // Update QR code based on package selection
+        document.getElementById('package').addEventListener('change', function() {
+            const price = this.value;
+            if (price) {
+                const qrImg = document.querySelector('#qrCode img');
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=FunLandKidsPark-NPR-${price}`;
+            }
+        });
+        
+        // Form submission
+        document.getElementById('ticketForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const package = document.getElementById('package').options[document.getElementById('package').selectedIndex].text;
+            const children = document.getElementById('children').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const name = document.getElementById('name').value;
+            
+            // Calculate total
+            const price = document.getElementById('package').value;
+            const total = price * children;
+            
+            // Show confirmation
+            alert(`Thank you, ${name}! Your booking for ${children} child(ren) for the ${package} on ${date} at ${time} has been received. Total amount: NPR ${total}. You will receive a confirmation SMS/Email shortly.`);
+            
+            // Reset form
+            this.reset();
+            qrCode.style.display = 'none';
+            cardPayment.style.display = 'none';
+            qrOption.classList.remove('selected');
+            cardOption.classList.remove('selected');
+        });
+    </script>
+</body>
+</html>

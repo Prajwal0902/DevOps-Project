@@ -1,0 +1,25 @@
+{
+  "cloudwatch-logs": {
+    "stream_logs": "true",
+    "datetime_format": "%Y-%m-%d %H:%M:%S"
+  },
+  "files": {
+    "rotatesize": 10485760,
+    "multiline_start_pattern": "{timestamp}",
+    "encoding": "ascii"
+  },
+  "logs": {
+    "collect_list": [
+      {
+        "file_path": "/var/log/nginx/access.log",
+        "log_group_name": "funland-nginx-access",
+        "log_stream_name": "{instance_id}"
+      },
+      {
+        "file_path": "/var/log/nginx/error.log",
+        "log_group_name": "funland-nginx-error",
+        "log_stream_name": "{instance_id}"
+      }
+    ]
+  }
+}
